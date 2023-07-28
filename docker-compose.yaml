@@ -4,7 +4,7 @@ services:
     build: client
     stdin_open: true
     container_name: client
-    image: todo_client
+    image: sukruciris/mern_client:latest
     restart: always
     depends_on:
       - server
@@ -24,7 +24,7 @@ services:
     networks:
       - express-mongo
       - react-express
-    image: todo_server
+    image: sukruciris/mern_server:latest
 
   mongo:
     container_name: mongo
@@ -34,7 +34,7 @@ services:
       - 27017:27017
     networks:
       - express-mongo
-    image: todo_mongo
+    image: sukruciris/mern_mongo:latest
 
 networks:
   react-express:
