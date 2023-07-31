@@ -27,15 +27,21 @@ spec:
           livenessProbe:
             httpGet:
               port: 8080
-              path: /server/health
-            initialDelaySeconds: 15
-            timeoutSeconds: 30
+              path: /health
+            failureThreshold: 3
+            initialDelaySeconds: 10
+            periodSeconds: 10
+            successThreshold: 1
+            timeoutSeconds: 1
           readinessProbe:
             httpGet:
               port: 8080
-              path: /server/ready
-            initialDelaySeconds: 15
-            timeoutSeconds: 30
+              path: /ready
+            failureThreshold: 3
+            initialDelaySeconds: 10
+            periodSeconds: 10
+            successThreshold: 1
+            timeoutSeconds: 1
       volumes:
         - name: todo-volume
           gcePersistentDisk:
