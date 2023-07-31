@@ -6,7 +6,9 @@ metadata:
     name: testing-kube-deploy
     app: testing-kube-app
 spec:
-  replicas: 1
+  minReplicas: 1
+  maxReplicas: 2
+  targetCPUUtilizationPercentage: 80
   selector:
     matchLabels:
       name: testing-kube-pod
@@ -24,3 +26,15 @@ spec:
           imagePullPolicy: Always
           ports:
             - containerPort: 8080
+          livenessProbe:
+            httpGet:
+              port: 8080
+              path: /health
+            initialDelaySeconds: 15
+            timeoutSeconds: 30
+          readinessProbe:
+            httpGet:
+              port: 8080
+              path: /ready
+            initialDelaySeconds: 15
+            timeoutSeconds: 30

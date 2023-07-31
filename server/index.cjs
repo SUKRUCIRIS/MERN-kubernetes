@@ -41,7 +41,11 @@ app.use(bodyParser.urlencoded({ extended: false }));
 const PORT = 8080;
 const HOST = "0.0.0.0";
 
-app.get("/healthcheck", (req, res) => {
+app.get("/health", (req, res) => {
+  res.send({ status: "ALL GOOD" });
+});
+
+app.get("/ready", (req, res) => {
   res.send({ status: "ALL GOOD" });
 });
 

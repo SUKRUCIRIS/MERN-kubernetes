@@ -6,7 +6,9 @@ metadata:
     name: testing-kube-deploy
     app: testing-kube-app
 spec:
-  replicas: 1
+  minReplicas: 1
+  maxReplicas: 2
+  targetCPUUtilizationPercentage: 80
   selector:
     matchLabels:
       name: testing-kube-pod
