@@ -42,11 +42,11 @@ const PORT = 8080;
 const HOST = "0.0.0.0";
 
 app.get("/health", (req, res) => {
-  res.send({ status: "ALL GOOD" });
+  res.status(200).send();
 });
 
 app.get("/ready", (req, res) => {
-  res.send({ status: "ALL GOOD" });
+  res.status(200).send();
 });
 
 app.get("/authors", (req, res) => {
