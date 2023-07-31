@@ -17,7 +17,6 @@ jobs:
           password: ${{ secrets.DOCKERHUB_TOKEN }}
       - run: docker compose build
       - run: docker compose push
-      - run: cd kubernetes-configs
       - run: echo "deb [signed-by=/usr/share/keyrings/cloud.google.gpg] https://packages.cloud.google.com/apt cloud-sdk main" | sudo tee -a /etc/apt/sources.list.d/google-cloud-sdk.list
       - run: curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key --keyring /usr/share/keyrings/cloud.google.gpg add -
       - run: sudo apt-get update
@@ -26,4 +25,4 @@ jobs:
         with:
           credentials_json: "${{ secrets.GOOGLE_CREDENTIALS }}"
       - run: gcloud container clusters get-credentials todo-cluster --zone europe-west1-b
-      - run: kubectl apply -f .
+      - run: kubectl apply -f /kubernetes-configs
