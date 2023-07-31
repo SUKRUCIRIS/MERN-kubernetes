@@ -22,4 +22,5 @@ jobs:
           credentials_json: "${{ secrets.GOOGLE_CREDENTIALS }}"
       - run: gcloud container clusters get-credentials todo-cluster --zone europe-west1-b
       - run: cd kubernetes-configs
+      - run: sudo apt-get install google-cloud-sdk-gke-gcloud-auth-plugin
       - run: kubectl apply -f .
