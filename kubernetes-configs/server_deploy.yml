@@ -35,3 +35,8 @@ spec:
               path: /ready
             initialDelaySeconds: 15
             timeoutSeconds: 30
+      volumes:
+        - name: todo-volume
+          gcePersistentDisk:
+            pdName: todo-disk
+            fsType: ext4
