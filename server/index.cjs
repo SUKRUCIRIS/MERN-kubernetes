@@ -42,10 +42,12 @@ const PORT = 8080;
 const HOST = "0.0.0.0";
 
 app.get("/health", (req, res) => {
+  console.log("Health check");
   res.status(200).send();
 });
 
 app.get("/ready", (req, res) => {
+  console.log("Ready check");
   res.status(200).send();
 });
 
