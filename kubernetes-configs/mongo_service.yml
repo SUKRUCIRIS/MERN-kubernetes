@@ -3,12 +3,12 @@ kind: Service
 metadata:
   name: mongo
   labels:
-    name: testing-kube-deploy
-    app: testing-kube-app
+    name: mongo
+    app: mongo
 spec:
   type: ClusterIP
   selector:
-    app: testing-kube-app
+    app: mongo
   ports:
     - protocol: TCP
       port: 27017

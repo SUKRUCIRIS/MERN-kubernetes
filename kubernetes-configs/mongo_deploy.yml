@@ -3,23 +3,23 @@ kind: StatefulSet
 metadata:
   name: deploy-mongo
   labels:
-    name: testing-kube-deploy
-    app: testing-kube-app
+    name: deploy-mongo
+    app: deploy-mongo
 spec:
   replicas: 1
   selector:
     matchLabels:
-      name: testing-kube-pod
-      app: testing-kube-app
+      name: deploy-mongo
+      app: deploy-mongo
   template:
     metadata:
-      name: testing-kube-pod
+      name: deploy-mongo
       labels:
-        name: testing-kube-pod
-        app: testing-kube-app
+        name: deploy-mongo
+        app: deploy-mongo
     spec:
       containers:
-        - name: testing-kube-container
+        - name: deploy-mongo
           image: "sukruciris/mern_mongo:latest"
           imagePullPolicy: Always
           ports:

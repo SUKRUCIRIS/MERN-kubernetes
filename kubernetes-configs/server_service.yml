@@ -3,12 +3,12 @@ kind: Service
 metadata:
   name: server
   labels:
-    name: testing-kube-deploy
-    app: testing-kube-app
+    name: server
+    app: server
 spec:
   type: ClusterIP
   selector:
-    app: testing-kube-app
+    app: server
   ports:
     - protocol: TCP
       port: 8080

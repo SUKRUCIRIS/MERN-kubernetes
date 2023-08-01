@@ -3,23 +3,23 @@ kind: Deployment
 metadata:
   name: deploy-server
   labels:
-    name: testing-kube-deploy
-    app: testing-kube-app
+    name: deploy-server
+    app: deploy-server
 spec:
   replicas: 1
   selector:
     matchLabels:
-      name: testing-kube-pod
-      app: testing-kube-app
+      name: deploy-server
+      app: deploy-server
   template:
     metadata:
-      name: testing-kube-pod
+      name: deploy-server
       labels:
-        name: testing-kube-pod
-        app: testing-kube-app
+        name: deploy-server
+        app: deploy-server
     spec:
       containers:
-        - name: testing-kube-container
+        - name: deploy-server
           image: "sukruciris/mern_server:latest"
           imagePullPolicy: Always
           ports:

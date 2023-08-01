@@ -3,12 +3,12 @@ kind: Service
 metadata:
   name: client
   labels:
-    name: testing-kube-deploy
-    app: testing-kube-app
+    name: client
+    app: client
 spec:
   type: LoadBalancer
   selector:
-    app: testing-kube-app
+    app: client
   ports:
     - protocol: TCP
       port: 80
