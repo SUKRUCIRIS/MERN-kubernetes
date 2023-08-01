@@ -27,12 +27,3 @@ spec:
           volumeMounts:
             - name: mongo-persistent-storage
               mountPath: /data/db
-  volumeClaimTemplates:
-    - metadata:
-        name: mongo-persistent-storage
-      spec:
-        storageClassName: "fast"
-        accessModes: ["ReadWriteOnce"]
-        resources:
-          requests:
-            storage: 10Gi
