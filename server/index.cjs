@@ -56,7 +56,7 @@ app.get("/authors", (req, res) => {
 });
 
 app.get("/", (req, res) => {
-  res.send({ status: "main" });
+  res.status(200).send();
 });
 
 app.listen(PORT, HOST, () => {
