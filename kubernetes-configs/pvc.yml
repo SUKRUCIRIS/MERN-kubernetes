@@ -3,6 +3,7 @@ kind: PersistentVolumeClaim
 metadata:
   name: mongo-persistent-storage
 spec:
+  storageClassName: mongo-storage
   accessModes:
     - ReadWriteOnce
   resources:
