@@ -4,19 +4,19 @@ metadata:
   name: deploy-server
   labels:
     name: deploy-server
-    app: deploy-server
+    app: todo-app
 spec:
   replicas: 1
   selector:
     matchLabels:
       name: deploy-server
-      app: deploy-server
+      app: todo-app
   template:
     metadata:
       name: deploy-server
       labels:
         name: deploy-server
-        app: deploy-server
+        app: todo-app
     spec:
       containers:
         - name: deploy-server

@@ -4,19 +4,19 @@ metadata:
   name: deploy-mongo
   labels:
     name: deploy-mongo
-    app: deploy-mongo
+    app: todo-app
 spec:
   replicas: 1
   selector:
     matchLabels:
       name: deploy-mongo
-      app: deploy-mongo
+      app: todo-app
   template:
     metadata:
       name: deploy-mongo
       labels:
         name: deploy-mongo
-        app: deploy-mongo
+        app: todo-app
     spec:
       containers:
         - name: deploy-mongo

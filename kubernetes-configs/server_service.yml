@@ -4,11 +4,11 @@ metadata:
   name: server
   labels:
     name: server
-    app: server
+    app: todo-app
 spec:
   type: ClusterIP
   selector:
-    app: server
+    app: todo-app
   ports:
     - protocol: TCP
       port: 8080
