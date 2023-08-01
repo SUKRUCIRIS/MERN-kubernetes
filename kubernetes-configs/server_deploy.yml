@@ -24,8 +24,3 @@ spec:
           imagePullPolicy: Always
           ports:
             - containerPort: 8080
-      volumes:
-        - name: todo-volume
-          gcePersistentDisk:
-            pdName: todo-disk
-            fsType: ext4
