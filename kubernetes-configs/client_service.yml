@@ -6,7 +6,7 @@ metadata:
     name: testing-kube-deploy
     app: testing-kube-app
 spec:
-  type: LoadBalancer
+  type: NodePort
   selector:
     app: testing-kube-app
   ports:
